@@ -18,7 +18,7 @@ const Forgotpassword = () => {
     if (otp.length===6){
       setIsNumber(!isNaN(value));
     }
-    // setIsNumber(isNaN(value));
+    
   };
 
   const handleSubmit = async (event) => {

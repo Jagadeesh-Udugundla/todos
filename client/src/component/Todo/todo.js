@@ -55,16 +55,16 @@ const SimpleTodos = () => {
   };
 
   return (
-    <div className="app-container">
-      <div className="simple-todos-container">
+    <div className="main-container">
+      <div className="todos-container">
         <h1 className="heading">Todos</h1>
-        <div className="cont">
+        <div className="contain">
           <input
             type="text"
             onChange={onChangeInput}
             placeholder="Create a Task"
             value={todoName}
-            className="input-cont"
+            className="inpu"
           />
           <select value={todoStatus} onChange={onChangeStatus} className="status">
             <option value="Pending">Pending</option>
@@ -72,7 +72,7 @@ const SimpleTodos = () => {
             <option value="Done">Done</option>
             <option value="In progress">In Progress</option>
           </select>
-          <button type="button" className="add-todo-button" onClick={addTodo}>
+          <button type="button" className="add-button" onClick={addTodo}>
             Add a Todo
           </button>
         </div>

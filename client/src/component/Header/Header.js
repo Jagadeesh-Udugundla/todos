@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../action/auth';
-import banner1 from './flipkart.png';
+import banner1 from './img4.png';
 
 const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     const style ={
@@ -15,9 +15,6 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     }
     const authLinks = (
         <Fragment>
-        {/* <Link to='/dashboard'><button  className="btn btn-outline-success my-2 my-sm-0" style={{color:"white"}} type="submit">All Products</button></Link>&nbsp; &nbsp; */}
-        {/* <Link to='/cart'><button  className="btn btn-outline-success my-2 my-sm-0" style={{color:"white"}} type="submit">Cart</button></Link>&nbsp; &nbsp; */}
-        {/* <Link to='/order'><button  className="btn btn-outline-success my-2 my-sm-0" style={{color:"white"}} type="submit">Orders</button></Link>&nbsp; &nbsp; */}
         <button onClick={logout} className="btn btn-outline-success my-2 my-sm-0" style={{color:"white"}} type="submit">Logout</button>
         </Fragment>
     )

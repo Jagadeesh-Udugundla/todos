@@ -6,7 +6,7 @@ const Shopuser = require('../../models/Shopuser');
 const auth = require('../../middleware/auth');
 
 
-// POST(/api/user) registration public
+
 
 router.post('/',[
     check('name','Name is required').isUppercase(),
@@ -35,7 +35,7 @@ router.post('/',[
     try{
         let exist = await Shopuser.findOne({email})
         if(exist){
-            // alert("user already exist")
+            
             return res.status(400).json({errors : [{msg:'User already exist'}]});
         }
         let newUser = new Shopuser({
@@ -86,7 +86,7 @@ router.get('/email/:email', async (req, res) => {
   
   
 
-// GET(/api/user/profile)   get my profile private
+
 router.get('/profile',auth,async (req,res)=>{
     try{
         const user = await Shopuser.findById(req.user.id).select('-password');
@@ -101,7 +101,7 @@ router.get('/profile',auth,async (req,res)=>{
     }
 })
 
-// PUT(/api/user/profile/edit)  edit the profile    private
+
 router.put('/profile/edit',[auth,
     check('name','Name is required').isUppercase(),
     check('phone','Mobile number is required').notEmpty(),
@@ -141,7 +141,7 @@ router.put('/profile/edit',[auth,
         })
         await Shopuser.updateOne({_id:req.user.id},updatingUser);
         let user = await Shopuser.findById(req.user.id).select('-password')
-        return res.json(user) // need to destructure in front-end
+        return res.json(user) 
         
     }
     catch(err){

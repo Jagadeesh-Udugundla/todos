@@ -1,10 +1,7 @@
 import setAuthToken from '../utils/setAuthToken';
 import axios from 'axios';
 import setAlert from './alert';
-// import {getCart} from './cart';
-// import {getOrder} from './order';
 
-// user loading
 export const loadUser = () =>async dispatch =>{
     if(localStorage.token){
         setAuthToken(localStorage.token);
@@ -23,7 +20,7 @@ export const loadUser = () =>async dispatch =>{
     }
 };
 
-//user register
+
 export const register = formData => async dispatch =>{
     const {name,email,password,address,pincode,state,city,phone} = formData;
     const config = {
@@ -39,8 +36,7 @@ export const register = formData => async dispatch =>{
             payload:res.data
         });
         dispatch(loadUser());
-        // dispatch(getCart());
-        // dispatch(getOrder());
+       
     }
     catch(err){
         const errors = err.response.data.errors;
@@ -55,7 +51,7 @@ export const register = formData => async dispatch =>{
 
 }
 
-// import axios from 'axios';
+
 
 export const getAllEmails = () => async dispatch => {
   try {
@@ -71,7 +67,7 @@ export const getAllEmails = () => async dispatch => {
 };
 
 
-//user login
+
 
 export const login = formData => async dispatch =>{
     const {email,password} = formData;
@@ -88,8 +84,7 @@ export const login = formData => async dispatch =>{
             payload:res.data
         });
         dispatch(loadUser());
-        // dispatch(getCart());
-        // dispatch(getOrder());
+       
     }
     catch(err){
         const errors = err.response.data.errors;
@@ -104,7 +99,7 @@ export const login = formData => async dispatch =>{
     
 }
 
-//user logout
+
 export const logout = () => dispatch =>{
     dispatch({
         type:"LOGOUT"

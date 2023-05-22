@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const Shopuser = require('../../models/Shopuser');
 const { check, validationResult } = require('express-validator');
 
-// POST(/api/auth) login public
+
 
 router.post('/',[
     check('email','Enter valid mail').isLowercase().isEmail(),

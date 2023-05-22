@@ -9,12 +9,11 @@ app.use(express.json())
 
 app.use('/api/user',require('./routes/api/user'));
 app.use('/api/auth',require('./routes/api/auth'));
-// app.use('/api/cart',require('./routes/api/cart'));
-// app.use('/api/order',require('./routes/api/order'));
 
-// Serve static assets in production
+
+
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
+  
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {

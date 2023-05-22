@@ -3,7 +3,7 @@ import { Link,Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {login} from '../../action/auth';
-import flip from "./flipkart.png"
+import flip from "./img2.png"
 
 const Login = ({ login, isAuthenticated }) => {
     const [formData,setFormData] = useState({
